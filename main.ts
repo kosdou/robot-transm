@@ -23,14 +23,23 @@ basic.forever(function () {
             . . # . .
             `)
         music.play(music.tonePlayable(139, music.beat(BeatFraction.Half)), music.PlaybackMode.UntilDone)
-    } else if (input.buttonIsPressed(Button.A)) {
+    } else if (joystickbit.getButton(joystickbit.JoystickBitPin.P15)) {
         radio.sendNumber(3)
         basic.showLeds(`
+            . . . . .
+            . . # # #
             . . # . .
+            . . # # .
             . . # . .
-            # # # # #
-            . . # . .
-            . . # . .
+            `)
+    } else if (joystickbit.getButton(joystickbit.JoystickBitPin.P14)) {
+        radio.sendNumber(4)
+        basic.showLeds(`
+            # # # # .
+            # . . . .
+            # # # . .
+            # . . . .
+            # . . . .
             `)
     } else {
         radio.sendNumber(0)
